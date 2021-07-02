@@ -7,19 +7,21 @@
 	<div class="p-2">
 		<div class="border mb-2 bg-red-300 shadow rounded p-2" v-for='x in data'>
 			<div class="pb-2 grid grid-cols-6">
-				<input type="text" class='inputan col-span-4' placeholder="nama barang">
-				<input type="text" class='inputan col-span-2 bg-purple-200' placeholder="hasil" readonly>
+				<input type="text" v-model='x.namaBarang' class='inputan col-span-4' placeholder="nama barang">
+				<input type="text" v-model='x.hasilBagi' class='inputan col-span-2 bg-purple-200' placeholder="hasil" readonly>
 			</div>
 			<div class="grid grid-cols-2">
-				<input type="text" class="inputan" placeholder="harga">
-				<input type="text" class="inputan" placeholder="banyak">
+				<input type="text" class="inputan" v-model='x.harga' placeholder="harga">
+				<input type="text" class="inputan" v-model='x.banyak' placeholder="banyak">
 			</div>
 		</div>
 	</div>
 
-	<center>
+	<div class="flex justify-center">
+		<div class="">&nbsp;</div>
 		<router-link class="underline pb-5" to='/credit'>credit</router-link>
-	</center>
+		<div class="">&nbsp;</div>
+	</div>
 </template>
 
 <style scoped>
@@ -31,6 +33,6 @@
 <script setup>
 	import {ref} from 'vue'
 	const data = ref([
-		{namaBarang: '', harga: '', kuantitas: '', hasilBagi: ''},
+		{namaBarang: '', harga: '', banyak: '', hasilBagi: ''},
 	])
 </script>
