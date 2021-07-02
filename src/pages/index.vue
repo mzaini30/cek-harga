@@ -31,8 +31,18 @@
 </style>
 
 <script setup>
-	import {ref} from 'vue'
+	import {ref, onMounted, watch} from 'vue'
 	const data = ref([
 		{namaBarang: '', harga: '', banyak: '', hasilBagi: ''},
 	])
+
+	const cek = () => {
+		if (localStorage.cekHarga) {
+			data.value = JSON.parse(localStorage.cekHarga)
+		}
+	}
+	onMounted(cek)
+
+	const simpanData = () => localStorage.cekHarga = JSON.stringify(data.value)
+	watch(data, simpanData)
 </script>
