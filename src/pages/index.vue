@@ -16,6 +16,10 @@
 			</div>
 		</div>
 	</div>
+
+	<center>
+		<router-link class="underline pb-5" to='/credit'>credit</router-link>
+	</center>
 </template>
 
 <style scoped>
@@ -27,7 +31,6 @@
 <script setup>
 	import {ref} from 'vue'
 	const data = ref([
-		{namaBarang: '', harga: '', kuantitas: '', hasilBagi: ''},
 		{namaBarang: '', harga: '', kuantitas: '', hasilBagi: ''},
 	])
 </script>
